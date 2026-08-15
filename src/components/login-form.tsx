@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { t, type Lang } from '@/lib/i18n'
@@ -13,6 +13,33 @@ export default function LoginForm() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [checking, setChecking] = useState(true)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) {
+        router.push('/admin')
+        router.refresh()
+        return
+      }
+      setChecking(false)
+    })
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session) {
+        router.push('/admin')
+        router.refresh()
+      }
+    })
+    return () => sub.subscription.unsubscribe()
+  }, [supabase, router])
+
+  if (checking) {
+    return (
+      <div className="flex justify-center py-10 text-sm text-zinc-600">
+        {t(lang, 'loading')}
+      </div>
+    )
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
