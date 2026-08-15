@@ -67,6 +67,17 @@ export type TranslationKey =
   | 'password'
   | 'login'
   | 'loginError'
+  | 'setPassword.title'
+  | 'setPassword.subtitle'
+  | 'newPassword'
+  | 'confirmPassword'
+  | 'passwordMismatch'
+  | 'passwordTooShort'
+  | 'savePassword'
+  | 'forgotPassword'
+  | 'resetPassword'
+  | 'resetSent'
+  | 'backToLogin'
   | 'status.NEW'
   | 'status.UNDER_REVIEW'
   | 'status.IN_PROGRESS'
@@ -184,6 +195,18 @@ const en: Record<TranslationKey, string> = {
   password: 'Password',
   login: 'Login',
   loginError: 'Invalid email or password.',
+  'setPassword.title': 'Set Your Password',
+  'setPassword.subtitle': 'Set a password so you can log in with your email next time.',
+  newPassword: 'New Password',
+  confirmPassword: 'Confirm Password',
+  passwordMismatch: 'Passwords do not match.',
+  passwordTooShort: 'Password must be at least 6 characters.',
+  savePassword: 'Save Password',
+  forgotPassword: 'Forgot password?',
+  resetPassword: 'Reset Password',
+  resetSent:
+    'A password reset link has been sent to your email. Open it and set a new password.',
+  backToLogin: 'Back to Login',
   'status.NEW': 'New',
   'status.UNDER_REVIEW': 'Under Review',
   'status.IN_PROGRESS': 'In Progress',
@@ -303,6 +326,18 @@ const ta: Record<TranslationKey, string> = {
   password: 'கடவுச்சொல்',
   login: 'உள்நுழையவும்',
   loginError: 'தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்.',
+  'setPassword.title': 'உங்கள் கடவுச்சொல்லை அமைக்கவும்',
+  'setPassword.subtitle': 'அடுத்த முறை உங்கள் மின்னஞ்சலுடன் உள்நுழைய கடவுச்சொல்லை அமைக்கவும்.',
+  newPassword: 'புதிய கடவுச்சொல்',
+  confirmPassword: 'கடவுச்சொல்லை உறுதிப்படுத்தவும்',
+  passwordMismatch: 'கடவுச்சொற்கள் பொருந்தவில்லை.',
+  passwordTooShort: 'கடவுச்சொல் குறைந்தது 6 எழுத்துகளாக இருக்க வேண்டும்.',
+  savePassword: 'கடவுச்சொல்லை சேமி',
+  forgotPassword: 'கடவுச்சொல் மறந்துவிட்டதா?',
+  resetPassword: 'கடவுச்சொல்லை மீட்டமை',
+  resetSent:
+    'உங்கள் மின்னஞ்சலுக்கு கடவுச்சொல் மீட்டமைப்பு இணைப்பு அனுப்பப்பட்டுள்ளது. அதைத் திறந்து புதிய கடவுச்சொல்லை அமைக்கவும்.',
+  backToLogin: 'உள்நுழைவுக்கு திரும்பு',
   'status.NEW': 'புதியது',
   'status.UNDER_REVIEW': 'பரிசீலனையில் உள்ளது',
   'status.IN_PROGRESS': 'செயல்பாட்டில் உள்ளது',
